@@ -20,6 +20,9 @@ public class Calculator {
         numbers.remove(1);
     }
     public void multiply(){
+        if (numbers.size() != 2){
+            throw new IllegalStateException();
+        }
         numbers.set(0, numbers.get(0) * numbers.get(1));
         numbers.remove(1);
     }
@@ -28,6 +31,6 @@ public class Calculator {
         if (numbers.size() != 1){
             throw new IllegalStateException();
         }
-        return numbers.get(0);
+        return numbers.getFirst();
     }
 }

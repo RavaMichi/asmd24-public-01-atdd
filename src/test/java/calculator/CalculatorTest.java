@@ -30,7 +30,21 @@ public class CalculatorTest {
         calculator.enter(5);
         calculator.enter(-6);
         calculator.multiply();
-        
+
         assertEquals(-30, calculator.getResult());
+    }
+
+    @Test
+    void testErrorOnMultiplicationWithOneNumberSaved() {
+        Calculator calculator = new Calculator();
+        calculator.enter(5);
+
+        assertThrows(IllegalStateException.class, calculator::multiply);
+    }
+
+    @Test
+    void testErrorOnMultiplicationWithNoNumberSaved() {
+        Calculator calculator = new Calculator();
+        assertThrows(IllegalStateException.class, calculator::multiply);
     }
 }
