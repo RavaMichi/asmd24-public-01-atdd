@@ -23,4 +23,14 @@ public class CalculatorTest {
         calculator.enter(3);
         assertThrows(IllegalStateException.class, () -> calculator.enter(5));
     }
+
+    @Test
+    void testMultiplication() {
+        Calculator calculator = new Calculator();
+        calculator.enter(5);
+        calculator.enter(-6);
+        calculator.multiply();
+        
+        assertEquals(-30, calculator.getResult());
+    }
 }

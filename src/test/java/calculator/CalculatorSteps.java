@@ -15,13 +15,20 @@ public class CalculatorSteps {
     public void iAddAnd(int arg0, int arg1) {
         this.calculator.enter(arg0);
         this.calculator.enter(arg1);
+        this.calculator.add();
     }
 
-    @Then("the sum should be {int}")
-    public void theSumShouldBe(int arg0) {
-        this.calculator.add();
+    @Then("the result should be {int}")
+    public void theResultShouldBe(int arg0) {
         if (arg0 != this.calculator.getResult()) { // or using Junit's asserts
             throw new IllegalStateException();
         }
+    }
+
+    @When("I multiply {int} and {int}")
+    public void iMultiplyArgAndArg(int arg0, int arg1) {
+        this.calculator.enter(arg0);
+        this.calculator.enter(arg1);
+        this.calculator.multiply();
     }
 }
