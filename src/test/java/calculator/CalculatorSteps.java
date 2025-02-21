@@ -31,4 +31,13 @@ public class CalculatorSteps {
         this.calculator.enter(arg1);
         this.calculator.multiply();
     }
+
+    @When("I divide {int} by {int}")
+    public void iDivideArgByArg(int arg0, int arg1) {
+        
+    }
+
+    @Then("an error should be displayed")
+    public void anErrorShouldBeDisplayed() {
+    }
 }
